@@ -1,17 +1,20 @@
 # Palm rejection for bash and xinput
+# Forked from https://github.com/olofmogren/palmreject/issues
 
-The code is tested on Ubuntu 16.04.1 with Gnome 3.
+Tested on:
+OS: Ubuntu 20.04 beta with Gnome 3.36. 
+Device: Cube i7 Stylus.
+Software: Stylus Labs Write
 
-Depends only on bash and xinput.
+Version notes:
+Code is temporarily hardwired to use my own device IDs, until I can find the bug causing the original version not to find my devices.
 
-Turns off touchscreen input when stylus is near screen.
+Dependencies:
+bash and xinput
 
-Stylus status is checked every 100 ms, a timeout is by
-default set to 2 seconds for re-enabling the touchscreen
-after stylus input.
+Function:
+Turns off touchscreen input when stylus is near screen. Stylus status is checked every 100 ms, a timeout is by default set to 2 seconds for re-enabling the touchscreen after stylus input.
 
-You need to check the ids for your devices.
-Run "xinput list" on your system and edit the
-first lines in palmreject.sh.
-Then run the script every time you login.
-
+Usage:
+Run "xinput list" to check the IDs of your devices and edit the respective lines in palmreject.sh.
+Run ./palmreject.sh every time you login.
