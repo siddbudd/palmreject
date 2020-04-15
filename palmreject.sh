@@ -14,17 +14,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # configuration. run "xinput list" to see ids for your devices.
-touchscreen_device_name='FTSC'
-stylus_device_name='Wacom'
-stylus_device_specifier='Pen'
+#touchscreen_device_name='FTSC'
+#stylus_device_name='Wacom'
+#stylus_device_specifier='Pen'
 disable_timeout=10
 
 # code follows. only change this if you know what you are doing.
 
 # find out device ids from xinput:
-touchscreen_device=`xinput --list | grep $touchscreen_device_name | grep -Po '(?<=id\=)[0-9]+'`
+#touchscreen_device=`xinput --list | grep $touchscreen_device_name | grep -Po '(?<=id\=)[0-9]+'`
+touchscreen_device="18"
 
-stylus_device=`xinput --list | grep $stylus_device_name | grep $stylus_device_specifier | head -n 1 | grep -Po '(?<=id\=)[0-9]+'`
+#stylus_device=`xinput --list | grep $stylus_device_name | grep $stylus_device_specifier | head -n 1 | grep -Po '(?<=id\=)[0-9]+'`
+stylus_device="17"
 
 last_state=-1
 timer=0
