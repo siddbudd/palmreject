@@ -2,7 +2,7 @@
 
 ## Source
 
-Forked from https://github.com/olofmogren/palmreject
+olofmogren / palmreject
 
 ## Tested on
 
