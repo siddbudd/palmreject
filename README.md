@@ -2,7 +2,7 @@
 
 ## Source
 
-Forked from https://github.com/olofmogren/palmreject/issues
+Forked from https://github.com/olofmogren/palmreject
 
 ## Tested on
 
