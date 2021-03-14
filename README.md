@@ -6,13 +6,14 @@ olofmogren / palmreject
 
 ## Tested on
 
-- OS: Ubuntu 20.04 beta with Gnome 3.36
+- OS: Ubuntu 20.04 beta with Gnome 3.36, Kubuntu 20.10
 - Hardware: Cube i7 Stylus
 - Software: Stylus Labs Write
 
 ## Version notes
 
 Code is temporarily hardwired to use my own device IDs, until I can find the bug causing the original version not to find my devices.
+Added rejection for eraser (my stylus comes with it and it palm should be rejected in both cases)
 
 ## Dependencies
 
