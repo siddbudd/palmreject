@@ -27,6 +27,7 @@ touchscreen_device="18"
 
 #stylus_device=`xinput --list | grep $stylus_device_name | grep $stylus_device_specifier | head -n 1 | grep -Po '(?<=id\=)[0-9]+'`
 stylus_device="17"
+eraser_device='22'
 
 last_state=-1
 timer=0
@@ -34,8 +35,15 @@ timer=0
 # main loop:
 while [ 1 ]
 do
-  state=`xinput query-state "$stylus_device" | grep -c "ValuatorClass Mode=Absolute Proximity=In"`
-
+  stylus=`xinput query-state "$stylus_device" | grep -c "ValuatorClass Mode=Absolute Proximity=In"`
+  eraser=`xinput query-state "$eraser_device" | grep -c "ValuatorClass Mode=Absolute Proximity=In"`
+  if [[ $stylus > 0 || $eraser > 0 ]];then
+    state=1
+  else
+    state=0
+  fi  
+    
+  echo "stylus is $stylus ; eraser is $eraser ; state is $state"
   if [ "$state" -ne "$last_state" ] || [ "$timer" -lt $((disable_timeout+1)) ];then
     if [ "$state" -ne 0 ];then
       echo "Disabling touchscreen, device $touchscreen_device"
